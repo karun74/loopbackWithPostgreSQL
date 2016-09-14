@@ -1,0 +1,69 @@
+{
+  "name": "Account",
+  "plural": "accounts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "accountNumber": {
+      "type": "number",
+      "required": true
+    },
+    "accountName": {
+      "type": "string",
+      "required": true
+    },
+    "balance": {
+      "type": "number",
+      "required": true
+    },
+    "createdAt": {
+      "type": "string",
+      "required": true,
+      "default": "email"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "lastmodefied": {
+      "type": "string"
+    },
+    "customerId": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customerId": {
+      "type": "hasMany",
+      "model": "customers",
+      "foreignKey": "customerId"
+    },
+    "addressId": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "addressId",
+      "through": "Account"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

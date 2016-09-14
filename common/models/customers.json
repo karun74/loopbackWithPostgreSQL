@@ -1,0 +1,42 @@
+{
+  "name": "customers",
+  "plural": "customers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "contactNumber": {
+      "type": "string",
+      "required": true
+    },
+    "customerId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "addresses": {
+          "type": "hasMany",
+	        "model": "address",
+		      "foreignKey": "addressId",
+		            "through": "customers_address_link"
+			        }
+  },
+  "acls": [],
+  "methods": {}
+}

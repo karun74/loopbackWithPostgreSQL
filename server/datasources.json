@@ -1,0 +1,11 @@
+{
+  "accountDS": {
+    "host": "${DB_HOST}",
+    "port": 5432,
+    "database": "ordermgmtdb",
+    "username": "ordermgtdbuser",
+    "password": "order$123",
+    "name": "accountDS",
+    "connector": "postgresql"
+  }
+}

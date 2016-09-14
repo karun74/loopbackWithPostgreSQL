@@ -1,0 +1,50 @@
+{
+  "name": "address",
+  "plural": "addresses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "addressId": {
+      "type": "number",
+      "required": true
+    },
+    "addressLine1": {
+      "type": "string",
+      "required": true
+    },
+    "addressLine2": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "zipcode": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customers": {
+      "type": "hasMany",
+      "model": "customer",
+      "foreignKey": "customerId",
+      "through": "customers_address_link"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

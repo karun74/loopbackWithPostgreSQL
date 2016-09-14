@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "accountDS"
+  },
+  "AccessToken": {
+    "dataSource": "accountDS",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "accountDS",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "accountDS",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "accountDS",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "accountDS",
+    "public": true
+  },
+  "customers": {
+    "dataSource": "accountDS",
+    "public": true
+  },
+  "address": {
+    "dataSource": "accountDS",
+    "public": true
+  },
+  "customers_address_link": {
+    "dataSource": "accountDS",
+    "public": false
+  }
+}
